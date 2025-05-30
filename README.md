@@ -4,6 +4,8 @@
 The goal of this tool is to edit the base game with the hopes of adding certain features and more!
 *This editor is not endorsed by the creator and all that mojo.*
 
+NOTE: You will need to get the original game yourself for this tool to work!
+
  1. Map Editor
  2. Npc / Entities Editor
  3. Item Editor
@@ -13,6 +15,7 @@ The goal of this tool is to edit the base game with the hopes of adding certain 
  7. Magic / Spells Editor
 
 TODO List:
+ - [ ] Add a how to use section to the main page
  - [ ] Implement map editor
  - [ ] Tile selector
  - [ ] Map loader
