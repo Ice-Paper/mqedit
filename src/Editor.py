@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import filedialog
 from tkinter.ttk import *
 import Weapons
 import Enemies
@@ -30,6 +31,7 @@ weapon_base_damage = Spinbox(root, from_= Weapons.weapon_min_damage, to= Weapons
 weapons_list_scrollbar = Scrollbar(root)
 weapons_list = Listbox(root, yscrollcommand=weapons_list_scrollbar.set)
 weapons_list_scrollbar.config()
+
 
 
 #Weapons editor function will hide on start unless you click the drop down menu
@@ -64,12 +66,35 @@ def WeaponEditor():
             weapons_list.insert(END, name)
 
 
+
+#Open files must use the main folder where the game is stored as an exe or other type of executable
+def ProjectOpen():
+    file_path = filedialog.askopenfile(
+        title = "Open Morlequariat folder",
+        filetypes = (("Morlequariat main folder", "*.asdf"), ("All files", "*.*"))
+    )
+
+    if file_path:
+        print("Selected file: ", file_path)
+        if file_path.readable:
+            f = open(file_path, "r")
+            print(f.read())
+        
+        else:
+            print("File is not readable!")
+
+
+# WORK ON FILE OPENING!!!
+
+
+
+#Where main program starts
 menuBar = Menu(root)
 
 #File dropdown menu
 filemenu = Menu(menuBar, tearoff = 0)
 menuBar.add_cascade (label = "File", menu = filemenu)
-filemenu.add_command(label = "Open Project", command = None)
+filemenu.add_command(label = "Open Project", command = ProjectOpen)
 filemenu.add_command(label = "Save Project", command = None)
 filemenu.add_separator()
 filemenu.add_command(label = "Exit", command = None)
