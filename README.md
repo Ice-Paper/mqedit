@@ -1,7 +1,7 @@
 ## MQ Edit
 *Morlequariat game editor / Hacking tool*
 
-The goal is to edit the base game with the hopes of adding certain features and more!
+The goal of this tool is to edit the base game with the hopes of adding certain features and more!
 *This editor is not endorsed by the creator and all that mojo.*
 
  1. Map Editor
