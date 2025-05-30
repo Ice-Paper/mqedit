@@ -1,0 +1,87 @@
+All info here is by pixels, also deal with it I like how more readable this is <3
+================================================================================
+                    IMAGE / SPRITE / UI / EFFECT SIZES
+================================================================================
+Playable characters:    48  x 56
+Cutscene / Card:        320 x 128
+Executable icon:        32  x 32
+Dungeon Banners:        96  x 48
+Terrain Status:         48  x 48  [Unused?]
+Damage Font:            9   x 14
+Background:             128 x 128
+Pillars:                48  x 96  [Top half is drawn above the player / players unsure about NPCs, Enemies, Effects,and items]
+Cursor:                 11  x 9
+Snake:                  228 x 48  [Oddly not in the npc's folder]
+Title:                  928 x 540 [Pixels get cut off at the bottom of the titlescreen by ??? amount]
+Tiles:                  48  x 48
+Font:                   12  x 20
+
+All music & sound effects are OGG files meaning they are massive and consume a crap ton on space [May cause lag when opening files].
+================================================================================
+                            MUSIC & SOUND EFFECTS
+================================================================================
+Titlescreen: mus - 0
+Overworld:   mus - 1
+Museum:      mus - 2
+
+SND:
+Switch_on:           - 0
+Switch_off:          - 1
+Level_up?:           - 2
+Attack?:             - 3
+Bell:                - 4
+clue?:               - 5
+boo?:                - 8
+heavy_damage?:       - 10
+powerup?:            - 12
+poison:              - 14
+80's doot fart:      - 15
+
+Will fix / update stuff the more I know about the game here [Don't ask why on gods green earth the files have negitive numbers or weird numbers it is what it is]
+================================================================================
+                                DIALOG / TEXT
+================================================================================
+ 0 - Testing text
+ 1 - Intro title + Player Awakes
+-1 - Save point [First fountain on the left side of the Museum]
+ 2 - Museum man text
+-2 - Person is not interested in item ???
+ 3 - Tailia joins the party
+ 4 - ???
+ 5 - Valks talk [I believe / end of demo]
+ 6 - Valks talk [Again I assume? could be wrong tho]
+
+GIVE:
+ 1 - Museum guy [I assume]
+ 7 - Snake [Blocking the pathway I think?]
+
+================================================================================
+                                MISC
+================================================================================
+[NOTE: If you change a weapons value you must also change its text value to be visible]
+[NOTE: Doing commits will not add base value damage to commit damage oddly]
+Weapons:
+
+Weapon Desciption
+[Weapon words]
+
+Base value
+[BV]
+
+Commit 1 value / attack power 1
+[C1] 
+
+Commit 2 value / attack power 2
+[C2]
+
+Commit 3 value / attack power 3
+[C3]
+
+
+================================================================================
+                                KNOWN GAME ISSUES
+================================================================================
+-Loading a blank save file rather than click "new" will cause the player to spawn out of bounds
+-Loading at a save point will hite the UI buttons on the bottom left of map 125
+-Map 122 has missing collisons of 5 tiles within that room
+-Map 121 plays the sound of the counterweight when you load the area from when you placed the counterweight [I assume not playing the counterweight sound is what they wanted to do]
