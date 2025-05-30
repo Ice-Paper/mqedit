@@ -1,6 +1,11 @@
 from tkinter import *
 from tkinter.ttk import *
 import Weapons
+import Enemies
+import Scripts
+import Items
+import Magic
+import Npcs
 
 
 project_opened = False
@@ -9,21 +14,25 @@ project_opened = False
 root = Tk()
 root.title("MQEdit V1.0a")
 
+#Labels / Text
 weapon_name_edit = Label(root, text = "Weapon Name:")
 weapon_desc_edit = Label(root, text = "Weapon Description:")
 weapon_base_damage_edit = Label(root, text = "Base Damage:")
 
+#Entery fields
 weapon_name_text = Entry(root)
 weapon_desc_text = Entry(root)
 
+#Num box
 weapon_base_damage = Spinbox(root, from_= Weapons.weapon_min_damage, to= Weapons.weapon_max_damage, increment = 1)
 
+#Scroll bar
 weapons_list_scrollbar = Scrollbar(root)
 weapons_list = Listbox(root, yscrollcommand=weapons_list_scrollbar.set)
 weapons_list_scrollbar.config()
 
 
-
+#Weapons editor function will hide on start unless you click the drop down menu
 def WeaponEditor():
     if weapon_name_edit.winfo_ismapped():
         weapon_name_edit.grid_remove()
