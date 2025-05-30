@@ -1,5 +1,7 @@
+import Editor
+
 def main():
-    print("Hello World!")
+    Editor()
 
 if __name__ == "__main__":
     main()
