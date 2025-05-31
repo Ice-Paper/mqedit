@@ -1,6 +1,8 @@
 weapon_min_damage = 0
 weapon_max_damage = 999
 
+weapon_data = ""
+
 weapon_name = ""
 weapon_desc = ""
 weapon_base = 0

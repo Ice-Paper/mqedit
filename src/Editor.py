@@ -10,7 +10,7 @@ import Npcs
 
 
 project_opened = False
-
+file_data_weapons = Weapons.weapon_data
 
 root = Tk()
 root.title("MQEdit V1.0a")
@@ -62,12 +62,18 @@ def WeaponEditor():
         weapons_list_scrollbar.grid(row = 5, column = 0)
         weapons_list.grid(row = 5, column = 1)
 
+        #Loop to add all names of each weapon in the game to this list displayed on the GUI's screen
         for name in Weapons.default_weapon_names:
             weapons_list.insert(END, name)
 
 
 
-#Open files must use the main folder where the game is stored as an exe or other type of executable
+
+
+
+
+
+#Open files must use the main folder where the game is stored as an exe or other type of executable.
 def ProjectOpen():
     file_path = filedialog.askopenfile(
         title = "Open Morlequariat folder",
@@ -75,16 +81,50 @@ def ProjectOpen():
     )
 
     if file_path:
-        print("Selected file: ", file_path)
+        print("Selected load file: ", file_path)
         if file_path.readable:
-            f = open(file_path, "r")
-            print(f.read())
+
+            file_open = open(file_path.name, "r+")
+            Weapons.weapon_data = file_open.read()
+            print(file_open)
+            
+            print("Weapon Data: " + Weapons.weapon_data)            
         
         else:
             print("File is not readable!")
 
 
-# WORK ON FILE OPENING!!!
+
+
+#Save files must use the main folder where the game is stored as an exe or other type of executable.
+def ProjectSave():
+    file_path = filedialog.asksaveasfile(
+        title = "Save Morlequariat folder",
+        filetypes = (("Morlequariat main folder", "*.asdf"), ("All files", "*.*"))
+    )
+
+    if file_path:
+        print("Selected save file: ", file_path)
+        
+        print("Weapon Data: " + Weapons.weapon_data)
+        
+        if file_path.readable:
+
+            file_save = open(file_path.name, "r+")
+            file_save.write(Weapons.weapon_data)
+            file_save.seek(0,0)
+
+            print(file_save.read())
+
+            file_save.close()
+
+        else:
+            print("File is not readable!")
+
+
+
+
+
 
 
 
@@ -95,7 +135,7 @@ menuBar = Menu(root)
 filemenu = Menu(menuBar, tearoff = 0)
 menuBar.add_cascade (label = "File", menu = filemenu)
 filemenu.add_command(label = "Open Project", command = ProjectOpen)
-filemenu.add_command(label = "Save Project", command = None)
+filemenu.add_command(label = "Save Project", command = ProjectSave)
 filemenu.add_separator()
 filemenu.add_command(label = "Exit", command = None)
 
