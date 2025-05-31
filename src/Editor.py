@@ -49,7 +49,7 @@ def WeaponEditor():
         weapons_list_scrollbar.grid_remove()
         weapons_list.grid_remove()
 
-    else:    
+    else:
         weapon_name_edit.grid(row = 0, column = 0)
         weapon_desc_edit.grid(row = 1, column = 0)
         weapon_base_damage_edit.grid(row = 2, column = 0)
@@ -81,6 +81,9 @@ def ProjectOpen():
     )
 
     if file_path:
+        print("================================================================================")
+        print("\t\t\tLoading files...")
+        print("================================================================================\n")
         print("Selected load file: ", file_path)
         if file_path.readable:
 
@@ -104,6 +107,9 @@ def ProjectSave():
     )
 
     if file_path:
+        print("================================================================================")
+        print("\t\t\tSaving files...")
+        print("================================================================================\n")
         print("Selected save file: ", file_path)
         
         print("Weapon Data: " + Weapons.weapon_data)
