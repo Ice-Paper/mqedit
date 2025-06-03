@@ -1,28 +1,19 @@
 from tkinter import *
 from tkinter import filedialog
 from tkinter.ttk import *
+import Settings
 import Weapons
-import Enemies
 import Scripts
+import Enemies
 import Items
 import Magic
 import Npcs
 
-#NEON   [Black, Pink, Light Blue]
-#Lime   [Green]
-#Snow   [Blue gray, pink gray, soft whites?]
-#Candy  [Light pink, soft pink, soft black]
-#Lemon  [Yellow]
-#Doom   [Red, Yellow, Black]
-#Pharoh [Gold, Black, Purple]
-#Galaxy [Black, Purple, Blue]
-#Fish   [Gray, Light blue, tan?]
 
-editor_styles = ["neon", "lime", "snow", "candy", "lemon", "doom", "pharaoh", "galaxy", "fish"]
-window_title = "MQEdit V1.0a"
-
-project_opened = False
 file_data_weapons = Weapons.weapon_data
+window_title = "MQEdit V1.0a"
+project_opened = False
+
 
 
 root = Tk()
@@ -170,7 +161,7 @@ def MQEditSettings():
 
     #Settings > Themes
     theme_settings = Combobox(settings_window, width = 16, textvariable = "N", state = "readonly")
-    theme_settings['values'] = editor_styles
+    theme_settings['values'] = Settings.editor_styles
     theme_settings.grid(row = 1, column = 0)
     theme_settings.current(0)
 
