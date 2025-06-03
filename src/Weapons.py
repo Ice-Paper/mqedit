@@ -1,6 +1,20 @@
 weapon_min_damage = 0
 weapon_max_damage = 999
 
+#Note this is the same as weapon damage quite literally however if the developer of the game decides to change it we have it here for that anyways
+weapon_min_commit_damage = 0
+weapon_max_commit_damage = 999
+
+#The length of a weapons name!
+weapon_name_max_char_length = 29
+#The length of a weapons line desciption
+weapon_desc_max_char_line_length = 31
+
+#Can be applied to both names & descriptions but not weapon printed damage
+weapon_fonts = ["\S", "\R", "\B", "\c", "\\n"]
+
+
+
 weapon_data = ""
 
 weapon_name = ""
@@ -11,7 +25,16 @@ weapon_com2 = 0
 weapon_com3 = 0
 weapon_icon = 0
 
-wepaon_effe = 0
+weapon_effe = 0
+
+#To seperate weapon name from weapon desc the game uses \t to parse that 
+#At the start of a weapons text desc if you \S it will set the font style to [font 3]
+#\S Special
+#\R Red
+#\B Blue
+#\c Clear
+#\\n new line
+
 
 #   First value is used for the weapons text logo
 #   Weapon icon 0 = Sword
@@ -33,21 +56,24 @@ if weapon_icon == 2:
 #   D values and their meanings
 #   d 0  = Slow
 #   d 1  = Aim down
-#   d 2  = BLANK
+#   d 2  = BLANK /Not implemented
 #   d 3  = Attack down
 #   d 4  = Holy Attack down
 #   d 5  = Fire Attack down
 #   d 6  = Ice Attack down
 #   d 7  = Posion Attack down
-#   d 8  = Death Attack down?
+#   d 8  = Currupt Attack down?
 
 #   d 9  = Sheild down
-#   d 10  = Holy Sheild down
+#   d 10 = Holy Sheild down
 #   d 11 = Fire Sheild down
 #   d 12 = Ice Sheild down
 #   d 13 = Poison Sheild down
-#   d 14 = Death Sheild down?
-#   d 15 [damage mod] = Poison ? but oddly the poison damage is nuts at times
+#   d 14 = Currupt Sheild down?
+#   d 15 = [damage mod] = Poison ? but oddly the poison damage is nuts at times
+#   d 16 = Fire damge (Goes down by 1 each turn)
+#   d 17 = Not mobile
+#   d 18 = Curse damage
 
 
 
@@ -72,7 +98,8 @@ default_weapon_names = [
     "Glue Stick",
     "fast sword",
     "faster sword",
-    "Simple Crossbow"]
+    "Simple Crossbow"
+    ]
 
 default_weapon_desc = [
     "Impressive, shiny, and\npossibly even capable of\ncutting something.\n\nBase damage: \\a0010\nCommit 1: \\a0014\nCommit 2: \\a0018\nCommit 3: \\a0022",
@@ -89,7 +116,7 @@ default_weapon_desc = [
 ]
 
 #Different Styles of weapon damage
-default_weapon_damage_type = ["d ", "p ", "a ", "s ", "r "]
+default_weapon_damage_type = ["d ", "a ", "p ", "r ", "s "]
 
 #This effects fire damage & poison but not the glue stick
 default_weapon_effect_mod = 5
